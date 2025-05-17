@@ -199,14 +199,14 @@ Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does n
 
 1. Does the code's author believe that every `Smiley` should be able to blink? Explain.
 
-> No, if the code's author believes that every Smiley should be able to blink, he would have defined the abstractmethod in the smiley class.
+> No, if the code's author believes that every Smiley should be able to blink, he would have defined the @abstractmethod in the smiley class.
 > Therefore, every subclass that inherits Smiley will have to define how the smiley shall blink. 
 
 2. For those smileys that blink, does the author expect them to blink in the same way? Explain.
 
 > No, I think the author would like to create a different blink. 
-> The purpose of abstraction is to enforce a particular method to be overriden by the sub-classes. Hence, it will have the same structure (blue-print). But, it is not to tell what the what `blink` method is.
-> If the user would like to make the blink method the same, he could have made a blink method in the Smiley class which can be inherited later on.
+> The purpose of abstraction is to enforce a particular method to be *overriden* by the sub-classes but have the same structure (blue-print). It is not to tell what the `blink` method is.
+> If the author would like to make the blink method the same, he could have made a blink method in the Smiley class which can be inherited later on.
 
 3. Referring to the implementation of blink in the Happy and Sad Smiley classes, give a brief explanation of what polymorphism is.
 
@@ -215,8 +215,8 @@ Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does n
 
 4. How is inheritance used in the blink method, and why is it important for polymorphism?
 
-> The blink method is inherited from 
->
+> The blink method is inherited from Blinkable. It is important for polymorphism because polymorphism can be achieved through the inheritance of abstract and concreate classes.
+> In the blink method, the concrete class is Happy and the abstract class is Blinkable.
 
 1. **Implement Blink in Sad Class:**
 
@@ -224,7 +224,16 @@ Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does n
 
    ```python
    def blink(self, delay=0.25):
-       pass  # Replace 'pass' with your implementation
+        """
+       Blinks the smiley's eyes once
+        
+        :param delay: Delay between blinks (in seconds)
+        """
+        self.draw_eyes(wide_open=False)
+        self.show()
+        time.sleep(delay)
+        self.draw_eyes(wide_open=True)
+        self.show()
    ```
 
 2. **Code Implementation:** Implement the code that allows the Sad smiley to blink. Use the implementation from the Happy Smiley as a reference. Ensure your new method functions similarly by controlling the blink duration through the `delay` argument.
@@ -235,11 +244,14 @@ Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does n
 
 Include a screenshot of the sad smiley or the modified `main.py`:
 
-![Sad Smiley Blinking](screenshots/sad_blinking.png)
+![Sad Smiley Blinking](screenshots/sad-blinking.png)
+![Sad Smiley Blinking](screenshots/main-py.png)
 
 - Observe and document the Sad smiley as it blinks its eyes. Describe any adjustments or issues encountered during implementation.
 
-  > Your answer here
+  > When I first tried it, I did not import time. Hence, the eyes became yellow and never came back.
+  > Then, I added the `import time` and `from blinkable import Blinkable`, which makes it blink once, the same way as Happy
+  > I also tried to not include `from blinkable import Blinkable`. It resulted with a blinking sad face. So it proofs that it works with any subclass that implements blink()
 
   ### 2.8. If It Walks Like a Duck…
 
@@ -247,23 +259,25 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   1. **Class Type Analysis:** What kind of class is `Blinkable`? Inspect its superclass for clues about its classification.
 
-     > Your answer here
+     > Abstract Class, as seen here `<class 'abc.ABCMeta'>`
 
   2. **Class Implementation:** `Blinkable` is a class intended to be implemented by other classes. What generic term describes this kind of class, which is designed for implementation by others? **Clue**: Notice the lack of any concrete implementation and the naming convention.
 
-  > Your answer here
+  > Interface
 
   3. **OO Principle Identification:** Regarding your answer to question (2), which Object-Oriented (OO) principle does this represent? Choose from the following and justify your answer in 1-2 sentences: Abstraction, Polymorphism, Inheritance, Encapsulation.
 
-  > Your answer here
+  > Abstraction. We can see it by the import of ABC clss, and the use of @abstractmethod on blink method, signifying that any subclasses that inherit Blinkable must be able to blink.
 
   4. **Implementation Flexibility:** Explain why you could grant the Sad Smiley a blinking feature similar to the Happy Smiley's implementation, even without directly using `Blinkable`.
 
-  > Your answer here
+  > Because of Polymorphism behaviour. As explained by week12 lesson.md, Python and other dynamically typed languages allow for more ad-hoc(read: "whatev's") polymorphism.
+  > So, as long as the object I am calling contains `blink()` method, then it will have ability to blink. 
+  > The object I am calling, which are Happy() and Sad() both have blink method and therefore it will blink even without Blinkable class.
 
   5. **Concept and Language Specificity:** In relation to your response to question (4), what is this capability known as, and why is it feasible in Python and many other dynamically typed languages but not in most statically typed programming languages like C#? **Clue** This concept is hinted at in the title of this section.
 
-  > Your answer here
+  > Duck Typing
 
   ***
 
@@ -276,19 +290,23 @@ Include a screenshot of the sad smiley or the modified `main.py`:
   1. **Defined Colors and Their Location:**
 
      1. Which colors are defined and in which class(s)?
-        > Your answer here
+        > colors are defined in Smiley class. 
+        >  The colors are WHITE, GREEN, RED, YELLOW, BLANK (black)
      2. What type of variables hold these colors? Are the values expected to change during the program's execution? Explain your answer.
-        > Your answer here
+        > TUPLE. 
+        > Once it is declared, it is not expected to change. The value in TUPLE is constant / immutable / not expected to change.
+        > The value of black in BLANK is unlikely to change, whereas the value of dimmed may change depending on how the code modify it.
      3. Add the color blue to the appropriate class using the appropriate format and values.
+        > BLUE = (0,0,255)
 
   2. **Usage of Color Variables:**
 
      1. In which classes are the color variables used?
-        > Your answer here
+        > Smiley, Happy, Sad
 
   3. **Simple Method to Change Colors:**
   4. What is the easiest way you can think to change the smileys to green? Easiest, not necessarily the best!
-     > Your answer here
+     > change the value of the current colour. For example, where it says `YELLOW = (255, 255, 0)`, we may channge it to YELLOW=(0, 255, 0) if we want to replace YELLOW with GREEN
 
   Here's a revised version of the "Flexible Colors – Step 1" section for the smiley project, incorporating your specifications for formatting and content updates:
 
@@ -318,7 +336,7 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   4. **Bulk rename:** We want to update our grid to use the value of complexion, but we have so many `Y`'s in the grid. Use your IDE's refactoring tool to rename all instances of the **symbol** `Y` to `X`. Where `X` is the value of the `complexion` variable. Include a screenshot evidencing you have found the correct refactor tool and the changes made.
 
-  ![Bulk Rename](screenshots/bulk_rename.png)
+  ![Bulk Rename](screenshots/bulk-rename.png)
 
   5. **Update the `complexion` method:** Adjust this method to return `self.my_complexion`, ensuring that whatever color is assigned during instantiation is what the smiley displays.
 
