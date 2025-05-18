@@ -15,7 +15,7 @@ class Sad(Smiley, Blinkable):
         """
         mouth = [49, 54, 42, 43, 44, 45]
         for pixel in mouth:
-            self.pixels[pixel] = Smiley.complexion(self)
+            self.pixels[pixel] = Smiley.blank(self)
 
     def draw_eyes(self, wide_open=True):
         """

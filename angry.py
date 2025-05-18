@@ -17,7 +17,7 @@ class Angry(Smiley):
         """
        Renders a mouth by blanking the pixels that form that object.
         """
-        mouth = [41, 46, 50, 51, 52, 53]
+        mouth = [42, 43, 44,45, 50, 53]
         for pixel in mouth:
             self.pixels[pixel] = Smiley.blank(self)
 
@@ -26,7 +26,7 @@ class Angry(Smiley):
        Draws the eyes (open or closed) on the standard smiley.
         :param wide_open (bool): eyes open or closed.
         """
-        eyes = [10, 13, 18, 21]
+        eyes = [9, 14, 18, 21 ]
         for pixel in eyes:
             if wide_open:
                 eyes = Smiley.blank(self)
