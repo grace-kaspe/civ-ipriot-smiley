@@ -331,7 +331,7 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   4. **Verify the implementation:** Ensure that the modifications function as expected. The smileys should still display in yellow, confirming that the new method correctly replaces the direct color references.
     ![After adding complexion method](screenshots/yellow_all.png) <br>
-    > Because I replaced where the direct colours are in other subclasses,as instructed by sep 2, the mouth and eyes of Happy then become Yellow as it uses complexion(self)
+    > Because I replaced where the direct colours that were in other subclasses,as instructed by sep 2, the mouth and eyes of Happy then become Yellow as it uses the `complexion` method.
 
   This step is crucial for setting up a more flexible system for color management in the smiley display logic, allowing for easy adjustments and extensions in the future.
 
