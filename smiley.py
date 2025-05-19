@@ -49,7 +49,3 @@ class Smiley:
             than implementation.
         """
         return self.my_complexion
-
-    def blank(self):
-        """Keeping the mouth and eyes that were blank as BLANK using a method"""
-        return self.BLANK

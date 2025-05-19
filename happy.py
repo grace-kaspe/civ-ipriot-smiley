@@ -18,7 +18,7 @@ class Happy(Smiley):
         """
         mouth = [41, 46, 50, 51, 52, 53]
         for pixel in mouth:
-            self.pixels[pixel] = Smiley.blank(self)
+            self.pixels[pixel] = self.BLANK
 
     def draw_eyes(self, wide_open=True):
         """
@@ -27,7 +27,7 @@ class Happy(Smiley):
         """
         eyes = [10, 13, 18, 21]
         for pixel in eyes:
-            self.pixels[pixel] = Smiley.blank(self) if wide_open else Smiley.complexion(self)
+            self.pixels[pixel] = self.BLANK if wide_open else Smiley.complexion(self)
 
     def blink(self, delay=0.25):
         """

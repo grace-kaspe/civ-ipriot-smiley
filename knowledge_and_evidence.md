@@ -314,7 +314,7 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   3. **Simple Method to Change Colors:**
   4. What is the easiest way you can think to change the smileys to green? Easiest, not necessarily the best!
-     > change the value of the current colour. For example, where it says `YELLOW = (255, 255, 0)`, we may channge it to YELLOW=(0, 255, 0) if we want to replace YELLOW with GREEN
+     > Where it says Y = self.YELLOW, I may change it to Y = self.GREEN in smiley.py
 
   Here's a revised version of the "Flexible Colors – Step 1" section for the smiley project, incorporating your specifications for formatting and content updates:
 
@@ -331,7 +331,6 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   4. **Verify the implementation:** Ensure that the modifications function as expected. The smileys should still display in yellow, confirming that the new method correctly replaces the direct color references.
     ![After adding complexion method](screenshots/yellow_all.png) <br>
-    > Because I replaced where the direct colours that were in other subclasses,as instructed by sep 2, the mouth and eyes of Happy then become Yellow as it uses the `complexion` method.
 
   This step is crucial for setting up a more flexible system for color management in the smiley display logic, allowing for easy adjustments and extensions in the future.
 
@@ -343,7 +342,8 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   2. **Introduce a new instance variable:** Create a variable called `my_complexion` and assign the `complexion` parameter to it. This step ensures that each smiley instance can maintain its own color state.
 
-  3. **Rationale for `my_complexion`:** Using a distinct instance variable like `my_complexion` avoids potential conflicts with the method parameter names and clarifies that it is an attribute specific to the object.
+  3. **Rationale for `my_comp
+4. lexion`:** Using a distinct instance variable like `my_complexion` avoids potential conflicts with the method parameter names and clarifies that it is an attribute specific to the object.
 
   4. **Bulk rename:** We want to update our grid to use the value of complexion, but we have so many `Y`'s in the grid. Use your IDE's refactoring tool to rename all instances of the **symbol** `Y` to `X`. Where `X` is the value of the `complexion` variable. Include a screenshot evidencing you have found the correct refactor tool and the changes made.
 
@@ -352,15 +352,8 @@ Include a screenshot of the sad smiley or the modified `main.py`:
   5. **Update the `complexion` method:** Adjust this method to return `self.my_complexion`, ensuring that whatever color is assigned during instantiation is what the smiley displays.
 
   6. **Verification:** Run the updated code to confirm that Smileys still defaults to yellow unless specified otherwise.
-> ![Bulk Rename](screenshots/yellow-3-3.png) <br>
-> To create the eyes and mouth which previously used BLANK colour, I created a new method called blank as shown below. It is used in the draw_mouth and draw_eyes
-> I know that this is not instructed, but I can't leave Smiley without eyes and mouth.
+> ![Verifify if complexion returns yellow](screenshots/yellow_verify.png) <br>
 
-```python
-    def blank(self):
-        """Keeping the mouth and eyes that were blank as BLANK using a method"""
-        return self.BLANK
-```
 
   ### 3.4. Flexible Colors – Step 3
 
