@@ -169,13 +169,14 @@ Compare and contrast the classes Happy and Sad.
 
 1. What is the key difference between the two classes?
    > In Happy, Smiley blinks. Whereas in Sad, Smiley does not Blink.
-   > The mouth and eyes are defined differently, resulting in happy and sad expression.
+   > The mouth are defined differently, resulting in happy or sad expression.
 2. What are the key similarities?
    > Both Class(es) inherit Smiley.
    > Both Classes have draw_mouth and draw_eyes method
 3. What difference stands out the most to you and why?
-   > In Happy, Smiley blinks. Whereas in Sad, Smiley does not Blink.
-   > It stands out to me because it is in the class definition, which tell us how Sad/Happy is constructed
+   > In Happy, Smiley blinks. Whereas in Sad, Smiley does not Blink.</br>
+   > It stands out to me because Blinkable is not being inherited in the Sad class, nor being imported into sad.py file. 
+   > I do not see Blinkable inside the parentheses or `()` next to the class definition.
 4. How does this difference affect the functionality of these classes
    > With the difference in draw_mouth and draw_eyes method, it affects how the mouth and eyes are drawn. 
    > With the difference in inheriting/importing Blinkable, Happy blinks, whereas Sad does not.
