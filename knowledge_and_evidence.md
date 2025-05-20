@@ -251,8 +251,8 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
 - Observe and document the Sad smiley as it blinks its eyes. Describe any adjustments or issues encountered during implementation.
 
-  > When I first tried it, I did not import time. Hence, the eyes became yellow and never came back.
-  > Then, I added the `import time` and `from blinkable import Blinkable`, which makes it blink once, the same way as Happy
+  > When I first tried it, I did not import time. Hence, the eyes became yellow and never came back. </br>
+  > Then, I added the `import time` and `from blinkable import Blinkable`, which makes it blink once, the same way as Happy. </br>
   > I also tried to not include `from blinkable import Blinkable`. It resulted with a blinking sad face. So it proofs that it works with any subclass that implements blink()
 
   ### 2.8. If It Walks Like a Duck…
