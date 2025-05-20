@@ -281,9 +281,9 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   > Because blink function is defined in the Sad class. </br>
   > Any function/method can be defined in the class level, and then be utilised (called) later on when the class is instantiated.  </br> </br>
-  > In our case, we called the method by running smiley.blink() in main function under main.py. 
-  > Similarly, we can create a drool function in the Sad class, then call this in main function under main.py.
-  > So as long as the method is defined in the Sad class, then any statements under that method will be run when, as demonstrated in smiley.blink().
+  > In our case, we called the blink method by running smiley.blink() under main.py. 
+  > Similarly, we can create a drool function in the Sad class, then call this in main function inside main.py.
+  > So, as long as the method is defined in the Sad class, then any statements under that method will be run when, as demonstrated in smiley.blink().
 
   5. **Concept and Language Specificity:** In relation to your response to question (4), what is this capability known as, and why is it feasible in Python and many other dynamically typed languages but not in most statically typed programming languages like C#? **Clue** This concept is hinted at in the title of this section.
 
