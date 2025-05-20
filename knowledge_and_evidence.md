@@ -69,19 +69,19 @@ python3 main.py
 
 1. Examine the code for the `smiley.py` file and provide  an example of a variable of each of the following types and their corresponding values (`_` should be replaced with the appropriate values):
 
-   | Type                    | name    | value           |
-   | ----------              |---------|-----------------|
-   | built-in primitive type | dimmed  | True            |
-   | built-in composite type | WHITE   | (255, 255, 255) |
-   | user-defined type       | Smiley  | -               |
+   | Type                    | name    | value                                                                                                          |
+   | ----------              |---------|----------------------------------------------------------------------------------------------------------------|
+   | built-in primitive type | dimmed  | True                                                                                                           |
+   | built-in composite type | WHITE   | (255, 255, 255)                                                                                                |
+   | user-defined type       | Smiley  | If I try to print the value, it prints `<class '__main__.Smiley'>`, but this is the type...  Value will be N/A |
 
 2. Fill in (`_`) the following table based on the code in `smiley.py`:
 
-   | Object                   | Type                                                                        |
-   | ------------             |-----------------------------------------------------------------------------|
-   | self.pixels              | list                                                                        |
-   | A member of self.pixels  | tuple                                                                       |
-   | self                     | the instance of the Smiley class, as seen here, `<class '__main__.Smiley'>` |
+   | Object                   | Type                                                                       |
+   | ------------             |----------------------------------------------------------------------------|
+   | self.pixels              | list                                                                       |
+   | A member of self.pixels  | tuple                                                                      |
+   | self                     | an instance of the Smiley class, as seen here, `<class '__main__.Smiley'>` |
 
 3. Examine the code for `smiley.py`, `sad.py`, and `happy.py`. Give an example of each of the following control structures using an example from **each** of these files. Include the first line and the line range:
 
@@ -265,21 +265,23 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   2. **Class Implementation:** `Blinkable` is a class intended to be implemented by other classes. What generic term describes this kind of class, which is designed for implementation by others? **Clue**: Notice the lack of any concrete implementation and the naming convention.
 
-  > Interface
+  > Interface. <br>
   > This is cited from Lesson.md in session 12, "An interface is a class that contains abstract methods (methods without a concrete implementation) and is used to define a contract for other classes."
   > Therefore, I think it is an Interface.
 
   3. **OO Principle Identification:** Regarding your answer to question (2), which Object-Oriented (OO) principle does this represent? Choose from the following and justify your answer in 1-2 sentences: Abstraction, Polymorphism, Inheritance, Encapsulation.
 
-  > This represents Polymorphism.
-  > Because Blinkable does not have a concrete implementation and is used as a bluprint that enforces other classes to override it, it is in a way allowing Polymorphism. It is allowing a different kind of blink.
-
+  > This represents Abstraction that leads to Polymorphism. </br>
+  > Because Blinkable does not have a concrete implementation and is used as a bluprint that enforces other classes to override it, it is in a way allowing Polymorphism. </br>
+  > It is allowing a different kind of blink.
+  
 
   4. **Implementation Flexibility:** Explain why you could grant the Sad Smiley a blinking feature similar to the Happy Smiley's implementation, even without directly using `Blinkable`.
 
-  > Because blink function is defined in the Sad class. 
-  > Any function can be defined in any class, and then be utilised (called) later on when the class is instantiated. In our case, we called the method by running smiley.blink() in main function under main.py. 
-  > Similarly, we create a drool function in the Sad class, then call this in main function under main.py.
+  > Because blink function is defined in the Sad class. </br>
+  > Any function/method can be defined in the class level, and then be utilised (called) later on when the class is instantiated.  </br> </br>
+  > In our case, we called the method by running smiley.blink() in main function under main.py. 
+  > Similarly, we can create a drool function in the Sad class, then call this in main function under main.py.
   > So as long as the method is defined in the Sad class, then any statements under that method will be run when, as demonstrated in smiley.blink().
 
   5. **Concept and Language Specificity:** In relation to your response to question (4), what is this capability known as, and why is it feasible in Python and many other dynamically typed languages but not in most statically typed programming languages like C#? **Clue** This concept is hinted at in the title of this section.
